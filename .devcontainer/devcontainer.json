@@ -1,0 +1,23 @@
+{
+  "name": "hyvechart",
+  "dockerComposeFile": ["compose.yml"],
+  "service": "devcontainer",
+  "workspaceFolder": "/workspace",
+  "postCreateCommand": "npx --yes shadcn@latest -v && npm install && npm run db:push",
+  "forwardPorts": [3000, 5555, "db:5432"],
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "editor.formatOnSave": true,
+        "editor.tabSize": 2,
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+      },
+      "extensions": [
+        "esbenp.prettier-vscode",
+        "csstools.postcss",
+        "Prisma.prisma"
+      ]
+    }
+  },
+  "features": {}
+}
